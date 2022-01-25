@@ -6,11 +6,18 @@ export const Container = styled.View`
 `
 
 export const SafeViewContainer = styled.SafeAreaView<{
-  bgColor?: string
-  bgImg?: string
+  bgColor?: string,
+  bgImg?: string,
+  dashboard?: boolean
 }>`
   flex: 1;
-  padding-top: ${Platform.OS === 'android' ? `${StatusBar.currentHeight || 0 + 10}px`: 0};
+  padding-top: ${({dashboard}) => Platform.OS === 'android' || !dashboard 
+    ? `${StatusBar.currentHeight || 0 + 10}px`
+    : 0
+  };
+  padding-left: ${({dashboard}) => dashboard ? '16px' : 0} ;
+  padding-right: ${({dashboard}) => dashboard ? '16px' : 0} ;
+  
 
   ${({bgColor}) => 
     bgColor && 
