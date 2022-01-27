@@ -1,14 +1,15 @@
 import styled from "styled-components/native"
-import { Text } from './Typography'
+import { Text } from '../atoms/Typography'
 
 type Props = {
   title: string,
-  imgUrl?: string,
+  imgUrl?: boolean,
 }
 
 const HeaderWrapper = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-top: 58px;
   padding-right: 16px;
 `
@@ -27,7 +28,9 @@ const Header = ({title, imgUrl}: Props) => {
       >
         {title}
       </Text>
-      <Image source={{uri: imgUrl}} style={{width: 36, height:36}}/>
+      {imgUrl 
+        ? <Image source={require('../atoms/images/68016194.jpeg')}/>
+        : ''}
     </HeaderWrapper>
   )
 }

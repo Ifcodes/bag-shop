@@ -9,7 +9,7 @@ import DiscoverScreen from "../screens/Discover-screen";
 import AddToCartScreen from "../screens/AddToCart-screen";
 import CheckoutScreen from "../screens/Checkout-screen";
 import { generateId } from "../utils/generateId";
-import NavBarIcons from "../atoms/vectors/NavBarIcon";
+// import NavBarIcons from "../atoms/vectors/NavBarIcon";
 
 // type Props = {
 //     screenName: string,
@@ -69,16 +69,16 @@ const BottomNav = () => {
   const [navList,setNavList] = useState(navItems)
   // const navigate = useNavigate()
 
-  const toggleMenu = (index : number) =>{
-    setNavList(navList.map((item, idx) => {
-      if(idx === index){
-        item.isActive = true
-      }else{
-        item.isActive = false
-      } 
-      return item
-    }))
-  }
+  // const toggleMenu = (index : number) =>{
+  //   setNavList(navList.map((item, idx) => {
+  //     if(idx === index){
+  //       item.isActive = true
+  //     }else{
+  //       item.isActive = false
+  //     } 
+  //     return item
+  //   }))
+  // }
 
   return(
     <TabBar.Navigator
@@ -94,8 +94,8 @@ const BottomNav = () => {
             tabBarLabel: ({color, focused}) => (
               <Text style={{color: `${focused ? '#3ebb68' : 'grey'}`, fontWeight: 'bold'}}>{navTitle}</Text>
             ),
-            tabBarIcon: ({focused}) => (
-              <NavBarIcons focused={focused} index={index}/>
+            tabBarIcon: () => (
+              navIcon
             )}
           }
         />
@@ -123,26 +123,26 @@ const BottomNav = () => {
 
 export default BottomNav
 
-const styles = StyleSheet.create({
-  navContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: 'center', 
-    backgroundColor: "white", 
-    paddingVertical: 16,
-  },
-  navTitle: {
-    color: '#3ebb68',
-    fontWeight: 'bold',
-    marginBottom: 8,
-  },
-  navItemWrapper: {
-    alignItems: "center",
-  },
-  dot: {
-    backgroundColor: '#3ebb68',
-    width: 10,
-    height: 10,
-    borderRadius: 100,
-  }
-})
+// const styles = StyleSheet.create({
+//   navContainer: {
+//     flexDirection: "row",
+//     justifyContent: "space-around",
+//     alignItems: 'center', 
+//     backgroundColor: "white", 
+//     paddingVertical: 16,
+//   },
+//   navTitle: {
+//     color: '#3ebb68',
+//     fontWeight: 'bold',
+//     marginBottom: 8,
+//   },
+//   navItemWrapper: {
+//     alignItems: "center",
+//   },
+//   dot: {
+//     backgroundColor: '#3ebb68',
+//     width: 10,
+//     height: 10,
+//     borderRadius: 100,
+//   }
+// })
