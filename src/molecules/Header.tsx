@@ -12,6 +12,7 @@ const HeaderWrapper = styled.View`
   align-items: center;
   margin-top: 58px;
   padding-right: 16px;
+  padding-left: 16px;
 `
 const Image = styled.Image`
   width: 36px;
@@ -25,12 +26,14 @@ const Header = ({title, imgUrl}: Props) => {
       <Text
         size='34px'
         weight={600}
+        lineHeight="40"
       >
         {title}
       </Text>
       {imgUrl 
         ? <Image source={require('../atoms/images/68016194.jpeg')}/>
-        : ''}
+        : null
+      }
     </HeaderWrapper>
   )
 }

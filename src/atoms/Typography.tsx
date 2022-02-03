@@ -8,7 +8,8 @@ type Props = {
   marginLeft?: string,
   marginRight?: string,
   marginTop?: string,
-  marginBottom?: string
+  marginBottom?: string,
+  lineHeight?: string,
 }
 
 export const Text = styled.Text<Props>`
@@ -20,4 +21,5 @@ export const Text = styled.Text<Props>`
   margin-left: ${({marginLeft}) => marginLeft || '0'}px;
   margin-bottom: ${({marginBottom}) => marginBottom || '0'}px;
   margin-right: ${({marginRight}) => marginRight || '0'}px;
+  line-height: ${({lineHeight}) => lineHeight || 22}px;
 `

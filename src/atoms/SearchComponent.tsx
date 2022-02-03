@@ -5,12 +5,14 @@ import { Feather, MaterialIcons } from '@expo/vector-icons';
 
 const SearchBox = styled.TextInput`
   color: #A3A3A3;
-  font-size: 17px;
-  height: 22px;
+  font-size: 19px;
+  font-weight: 400;
+  height: 36px;
   padding-left: 8px;
-  margin-left: 8px;
+  margin-left: 9px;
   margin-right: 8px;
   flex: 1;
+
 `
 
 const Search = () => {
@@ -18,13 +20,17 @@ const Search = () => {
     <Container
       bgColor='rgba(120, 120, 128, 0.08)'
       height='36'
-      radius='20px'
+      radius='20'
       align='center'
       row
       justify= 'space-between'
-      paddingLeft='8'
-      paddingRight='8'
+      paddingLeft='12'
+      paddingRight='9'
+      paddingBottom="7"
+      paddingTop="7"
       marginTop='16'
+      marginLeft="16"
+      marginRight="16"
     >
       <Feather name="search" size={22} color="#A3A3A3" />
       <SearchBox 
